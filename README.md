@@ -1,2 +1,5 @@
 # Hitomezashi Stitch Patterns
-2e projet avec Pygame, inspiré de la vidéo éponyme de Numberphile : https://www.youtube.com/watch?v=JbfhzlMk2eY
+2<sup>e</sup> projet avec Pygame
+![capture d’écran](https://github.com/xDEADC0DE/pygame-Hitomezashi-Stitch-Patterns/blob/master/screenshots/2021-12-10%2022h20.png?raw=true))
+
+Inspiré de la vidéo éponyme de Numberphile : https://www.youtube.com/watch?v=JbfhzlMk2eY

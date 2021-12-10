@@ -16,7 +16,7 @@ pygame.font.init()
 POLICE_MOTS = pygame.font.SysFont('arial', 30)
 
 # options du jeu
-TAILLE_MOTS = 20
+TAILLE_MOTS = 22
 COULEUR_POINTS_GRILLE = 'gray'
 COULEUR_POINTS_TRAITS = 'black'
 TAILLE_TRAITS = 5
