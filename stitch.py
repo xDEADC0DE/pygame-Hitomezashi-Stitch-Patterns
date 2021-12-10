@@ -44,7 +44,7 @@ def draw(mot_1: str, mot_2: str, x_actif: bool):
 	for n,lettre in enumerate(mot_2):
 		screen.blit(POLICE_MOTS.render(lettre, 1, couleur_x), (INTERVALLE//3, INTERVALLE+n*INTERVALLE))
 		if not lettre == ' ':
-			start_on = unicodedata.normalize('NFKD', lettre)[0] in ('a')
+			start_on = unicodedata.normalize('NFKD', lettre)[0] in ('aeiouy')
 			draw_ligne(n+1,start_on)
 
 	# colonnes
