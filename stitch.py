@@ -30,6 +30,9 @@ def draw(mot_1, mot_2):
 		for ligne in range(INTERVALLE, TAILLE_ECRAN, INTERVALLE):
 			pygame.draw.rect(screen, COULEUR_POINTS_GRILLE, pygame.Rect(colonne,ligne, TAILLE_TRAITS,TAILLE_TRAITS))
 
+	mot_1 = f'{mot_1:<{TAILLE_MOTS}}'
+	mot_2 = f'{mot_2:<{TAILLE_MOTS}}'
+
 	# lignes
 	for n,lettre in enumerate(mot_2):
 		screen.blit(POLICE_MOTS.render(lettre, 1, 'black'), (INTERVALLE//3, INTERVALLE-15+n*INTERVALLE))
@@ -70,7 +73,7 @@ def main():
 	if DEBUG:
 		print('intervale = {:d}'.format(INTERVALLE))
 
-	mot_x = mot_y = ' ' * TAILLE_MOTS
+	mot_x = mot_y = ''#' ' * TAILLE_MOTS
 	draw(mot_x, mot_y)
 
 	while jouer:
@@ -88,11 +91,11 @@ def main():
 
 				mot_x = mot_x + event.unicode
 				if len(mot_x)>TAILLE_MOTS:
-					mot_x = mot_x[:-1]
+					mot_x = mot_x[1:]
 
+				mot_y = mot_y + event.unicode
 				if len(mot_y)>TAILLE_MOTS-1:
-					mot_y = mot_y[:-1]
-				mot_y = event.unicode + mot_y
+					mot_y = mot_y[1:]
 
 				# Visuals : draw()
 				draw(mot_x, mot_y)
