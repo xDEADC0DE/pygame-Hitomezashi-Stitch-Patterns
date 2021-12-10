@@ -74,6 +74,10 @@ def draw_colonne(colonne: int, start_on: bool):
 		start_on = not start_on
 
 def completer_mot(mot: str, caractere: str) -> str:
+	# on ignore les espaces
+	if caractere == ' ':
+		return mot
+		
 	mot = mot + caractere
 	if len(mot)>TAILLE_MOTS-1:
 		mot = mot[1:]
