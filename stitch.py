@@ -16,7 +16,7 @@ pygame.font.init()
 POLICE_MOTS = pygame.font.SysFont('arial', 30)
 
 # options du jeu
-TAILLE_MOTS = 22
+TAILLE_MOTS = 25
 COULEUR_POINTS_GRILLE = 'gray'
 COULEUR_POINTS_TRAITS = 'black'
 TAILLE_TRAITS = 5
@@ -79,7 +79,7 @@ def completer_mot(mot: str, caractere: str) -> str:
 		return mot
 		
 	mot = mot + caractere
-	if len(mot)>TAILLE_MOTS-1:
+	if len(mot)>TAILLE_MOTS:
 		mot = mot[1:]
 	return mot
 
