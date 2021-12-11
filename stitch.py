@@ -16,7 +16,7 @@ pygame.font.init()
 POLICE_MOTS = pygame.font.SysFont('arial', 30)
 
 # options du jeu
-TAILLE_MOTS = 25
+TAILLE_MOTS = 16
 COULEUR_POINTS_GRILLE = 'gray'
 COULEUR_POINTS_TRAITS = 'black'
 TAILLE_TRAITS = 5
@@ -42,14 +42,16 @@ def draw(mot_1: str, mot_2: str, x_actif: bool):
 
 	# lignes
 	for n,lettre in enumerate(mot_2):
-		screen.blit(POLICE_MOTS.render(lettre, 1, couleur_x), (INTERVALLE//3, INTERVALLE+n*INTERVALLE))
+		texte = POLICE_MOTS.render(lettre, 1, couleur_x)
+		screen.blit(texte, (INTERVALLE//3, texte.get_height()+ n*INTERVALLE))
 		if not lettre == ' ':
 			start_on = unicodedata.normalize('NFKD', lettre)[0] in ('aeiouy')
 			draw_ligne(n+1,start_on)
 
 	# colonnes
 	for n,lettre in enumerate(mot_1):
-		screen.blit(POLICE_MOTS.render(lettre, 1, couleur_y), (INTERVALLE+15+n*INTERVALLE, 0))
+		texte = POLICE_MOTS.render(lettre, 1, couleur_y)
+		screen.blit(texte, (INTERVALLE-texte.get_width()//2+n*INTERVALLE, 0))
 		if not lettre == ' ':
 			start_on = unicodedata.normalize('NFKD', lettre)[0] in ('aeiouy')
 			draw_colonne(n+1,start_on)
